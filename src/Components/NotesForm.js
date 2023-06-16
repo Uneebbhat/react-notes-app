@@ -43,16 +43,21 @@ export default function NotesForm() {
 
   return (
     <>
-      <div className="wrapper">
+      <div className="wrapper m-4">
         <div className="form">
-          <input type="text" id="title" onChange={handleOnChangeTitle} />
+          <input
+            type="text"
+            id="title"
+            onChange={handleOnChangeTitle}
+            placeholder="Enter your title"
+          />
           <textarea
             onChange={handleOnChangeText}
             id="text__area"
             cols="30"
             rows="10"
-          ></textarea>
-          <button className="btn" onClick={handleSubmitNote}>
+            placeholder="Enter your text"></textarea>
+          <button className="btn btn-primary" onClick={handleSubmitNote}>
             Add note
           </button>
         </div>
@@ -60,7 +65,7 @@ export default function NotesForm() {
           <div className="notes__wrapper">
             {notes.map((note, index) => (
               <div className="note" key={index}>
-                <h2 className="note__title">{note.title}</h2>
+                <h4 className="note__title">{note.title}</h4>
                 <p className="note__message">{note.text}</p>
               </div>
             ))}
